@@ -1,0 +1,85 @@
+<template>
+  <div class="search-panel">
+    <el-row class="m-header-searchbar">
+      <el-col :span="9" class="left">
+        <img src="@/assets/img/seachlogo.png" alt="" />
+      </el-col>
+      <el-col :span="15" class="center">
+        <div class="wrapper">
+          <el-input
+            v-model="seachContext"
+            placeholder="请输入内容"
+            @focus="focus"
+            @blur="blur"
+          ></el-input>
+          <el-button icon="el-icon-search"></el-button>
+          <dl class="hotPlace" v-show="isHot">
+            <dt>热门搜索</dt>
+            <dd v-for="(hotPalce, index) in hotPalceList" :key="index">
+              {{ hotPalce }}
+              <router-link
+                :to="{ name: '#', params: { name: hotPalce } }"
+              ></router-link>
+            </dd>
+          </dl>
+          <dl class="searchList" v-show="isSearch">
+            <dd v-for="(searchItem, index) in searchList" :key="index">
+              <router-link :to="{ name: '#', params: { name: searchItem } }">{{
+                searchItem
+              }}</router-link>
+            </dd>
+          </dl>
+        </div>
+        <p class="suggest">
+          <a href="" v-for="(suggest, index) in suggestList" :key="index"
+            >{{ suggest }}
+          </a>
+        </p>
+      </el-col>
+    </el-row>
+  </div>
+</template>
+
+<script>
+export default {
+  created () {
+    // this.$axios
+    //   .get(
+    //     "https://developer.duyiedu.com//api/meituan/header/search.json?appkey=hanhan1__1586220819397"
+    //   )
+    //   .then(
+    //     (data) => {
+    //       console.log(data);
+    //     },
+    //     (err) => {
+    //       console.log(err);
+    //     }
+    //   );
+  },
+  data () {
+    return {
+      seachContext: '',
+      isFocus: false,
+      hotPalceList: ['火锅', '火锅自助', '火锅 重庆'],
+      searchList: ['火锅', '火锅自助', '火锅 重庆'],
+      suggestList: ['火锅', '火锅自助', '火锅 重庆']
+    }
+  },
+  computed: {
+    isSearch () {
+      return this.isFocus && this.seachContext
+    },
+    isHot () {
+      return this.isFocus && !this.seachContext
+    }
+  },
+  methods: {
+    focus () {
+      this.isFocus = true
+    },
+    blur () {
+      this.isFocus = false
+    }
+  }
+}
+</script>
