@@ -189,22 +189,43 @@ export default {
         {
           ico: "hair",
           title: "丽人 / 美发 / 医学美容",
-          children: [],
+          children: [{
+              title : '丽人',
+              children : ["美发",'美甲美睫','美容美体','医学美容','瑜伽舞蹈','瘦身纤体','韩式定妆','祛痘纹身','化妆品','养发']
+          }],
         },
         {
           ico: "marry",
           title: "结婚 / 婚纱摄影 / 婚宴",
-          children: [],
+          children: [{
+              title: '结婚',
+              children : ['婚纱摄影','旅拍','个性写真','婚宴','婚庆公司','婚纱礼服','西服定制','婚戒首饰','婚车租赁','司仪主持','彩妆造型','婚礼跟拍','婚礼小礼品','更多婚礼服务']
+          }],
         },
         {
           ico: "offspring",
           title: "亲子 / 儿童乐园 / 幼教",
-          children: [],
+          children: [{
+              title : '儿童乐园',
+              children : ['婴儿游泳','其它亲子游乐']
+          },{
+              title : '幼儿教育',
+              children : ['早教中心','少儿英语','智力开发','托班/幼儿园','幼儿教育','其他幼儿教育']
+          },{
+              title : '亲子摄影',
+              children : ['儿童摄影','孕妇写真','上门拍','其他亲子摄影'],
+          },{
+              title: '孕妇产护理',
+              children : ['月子会所','产后恢复','妇幼医院','孕产用品','开奶催乳','月嫂','亲子购物','宝宝派对','亲子服务']
+          }],
         },
         {
           ico: "sport",
           title: "运动健身 / 健身中心",
-          children: [],
+          children: [{
+              title : '运动健身',
+              children : ['健身中心','武术场馆','游泳馆','羽毛球馆','溜冰场','射箭馆','篮球场','网球馆','台球馆','乒乓球','足球场','高尔夫场','保龄球馆','体育场馆','马术场','壁球馆','更多运动']
+          }],
         },
         {
           ico: "furniture",
@@ -230,6 +251,7 @@ export default {
     };
   },
   computed: {
+      // 展示
     showDetail() {
       return this.isCurDetail || this.curDetail;
     },
@@ -245,7 +267,6 @@ export default {
     },
     mouseenterDetail() {
       clearTimeout(this.showDetailTime);
-      this.isCurDetail = true;
     },
     mouseleaveDetail() {
       this.curDetail = null;

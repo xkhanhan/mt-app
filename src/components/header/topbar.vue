@@ -1,5 +1,5 @@
 <template>
-  <el-row class="m-header-topbar m-header">
+  <el-row class="m-header-topbar ">
     <el-col :span="10">
       <my-geo></my-geo>
     </el-col>

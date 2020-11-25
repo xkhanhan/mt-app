@@ -17,7 +17,7 @@
         color: #222;
         text-decoration: none;
         &:hover {
-          color: #f04d4e;
+          color: #ed1e24;
         }
 
         &.takeout:hover {
@@ -29,7 +29,7 @@
         }
 
         &.business:hover {
-          color: #31BBAC;
+          color: #FE8C00;
         }
       }
     }
@@ -58,15 +58,20 @@
           width: 118px;
           margin: 5px;
         }
-        h4 {
-          img {
+        // h4 {
+        //     img {
+        //         width: 47px;
+        //         height: 47px;
+        //         border-radius: 50%;
+        //         border: 4px solid #E5E5E5;
+        //       }
+        // }
+        img {
             width: 47px;
             height: 47px;
             border-radius: 50%;
             border: 4px solid #E5E5E5;
           }
-        }
-
         p>button {
           width: 120px;
           margin-bottom: 15px;
