@@ -1,4 +1,5 @@
-z<template>
+<template>
+<!-- 默认的模板组件 -->
   <div class="layout-default">
     <el-container>
       <el-header style="height : ''">

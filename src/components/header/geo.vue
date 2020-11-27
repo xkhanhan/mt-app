@@ -1,4 +1,5 @@
 <template>
+<!-- 头部左半部分城市和个人信息 -->
     <div class="m-geo">
         <div class='position'>
                <i class="el-icon-location" /><span>北京</span>

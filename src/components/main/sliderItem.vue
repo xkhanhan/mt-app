@@ -1,6 +1,6 @@
 <template>
   <div class="slider-item">
-    <router-link :to="{ name: '/' }">
+    <router-link :to="{ name: 'defaultPage' }">
       <img :src="item.url" alt="" />
       <div class="film-info">
         <p class="film-score">

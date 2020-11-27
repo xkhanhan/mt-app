@@ -1,4 +1,5 @@
 <template>
+<!-- 主页侧边导航，中间轮播，侧边登录模块 -->
   <div class="m-life">
     <el-row>
       <ul class="nav">
@@ -87,6 +88,7 @@
 export default {
   data() {
     return {
+        // 用于轮播的图片
       carouselImg: [
         {
           url:

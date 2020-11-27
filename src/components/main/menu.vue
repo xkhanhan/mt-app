@@ -1,4 +1,5 @@
 <template>
+<!-- 侧边导航栏组件 -->
   <div class="m-menu">
     <dl class="nav"
         @mouseleave="mouseleaveMenu"
@@ -40,6 +41,7 @@ export default {
     return {
       isCurDetail: false,
       curDetail: null,
+      // 侧边导航栏数据
       menuList: [
         {
           ico: "food",
@@ -257,17 +259,34 @@ export default {
     },
   },
   methods: {
+      /**
+       * 鼠标移入侧边导航栏事件
+       *
+       * @param {Array} item 二级导航的数据
+       * 移入侧边导航不同模块时对数据进行赋值
+       */
     mouseenterMenu(item) {
+        // 对数据进行赋值
       this.curDetail = item;
     },
+    // 鼠标移出侧边导航栏事件
     mouseleaveMenu() {
+        /**
+         * 当鼠标移出侧边栏移入二级导航栏时不能立即触发移出事件,
+         * 不然就会出现鼠标无法移入二级导航的状况，
+         * 所以推入事件队列延迟执行
+         */
       this.showDetailTime = setTimeout(() => {
+          // 对二级导航的数据进行赋值
         this.curDetail = null;
       }, 200);
     },
+    // 鼠标移入二级导航事件
     mouseenterDetail() {
+        // 移入二级导航时 清除 移出侧边导航栏的 定时器
       clearTimeout(this.showDetailTime);
     },
+    // 鼠标移出二级导航事件
     mouseleaveDetail() {
       this.curDetail = null;
       this.isCurDetail = false;

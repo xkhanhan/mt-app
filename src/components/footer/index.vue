@@ -1,4 +1,5 @@
 <template>
+<!-- 尾部导航和商家信息 -->
   <footer class="com-footer">
     <div class="footer-content">
       <div class="footer-link clearfix">
@@ -512,9 +513,7 @@
     </div>
   </footer>
 </template>
-<script>
-export default {};
-</script>
+
 <style lang="scss">
 @import "@/assets/css/public/footer.scss";
 </style>

@@ -42,20 +42,6 @@
 
 <script>
 export default {
-  created () {
-    // this.$axios
-    //   .get(
-    //     "https://developer.duyiedu.com//api/meituan/header/search.json?appkey=hanhan1__1586220819397"
-    //   )
-    //   .then(
-    //     (data) => {
-    //       console.log(data);
-    //     },
-    //     (err) => {
-    //       console.log(err);
-    //     }
-    //   );
-  },
   data () {
     return {
       seachContext: '',
@@ -66,17 +52,24 @@ export default {
     }
   },
   computed: {
+      // 用于展示搜索框下的搜索信息
     isSearch () {
+        // 当鼠标聚焦且有文字时展示
       return this.isFocus && this.seachContext
     },
+
+    // 用于展示搜索框下的热门信息
     isHot () {
+        // 当鼠标聚焦且没有文字时展示
       return this.isFocus && !this.seachContext
     }
   },
   methods: {
+      // 搜索框聚焦事件
     focus () {
       this.isFocus = true
     },
+    // 搜索框失焦事件
     blur () {
       this.isFocus = false
     }
