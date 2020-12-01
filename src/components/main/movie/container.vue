@@ -1,19 +1,7 @@
 <template>
   <!-- 猫眼电影组件 -->
   <div class="m-movie">
-    <dl @mouseover="hanleHover">
-      <dt>猫眼电影</dt>
-      <dd :class="{ active: kind == 'isMovie' }" data-type="isMovie">
-        正在热映
-      </dd>
-      <dd :class="{ active: kind == 'theMovie' }" data-type="theMovie">
-        即将热映
-      </dd>
-      <span>
-        全部
-        <i class="arrow"></i>
-      </span>
-    </dl>
+    <my-navbar @over="hanleHover($event)" :navBar="navBar"></my-navbar>
     <el-row>
       <transition mode="out-in" name="slider">
         <div class="slider" ref="slider" :style="{ left: leftNum + 'px' }">
@@ -34,17 +22,33 @@
   </div>
 </template>
 <script>
-import mySlider from "@/components/main/sliderItem.vue";
+import mySlider from "./sliderItem.vue";
+import myNavbar from "../navbar";
 
 export default {
   components: {
     mySlider,
+    myNavbar,
   },
   data() {
     return {
       leftNum: 0, //内容偏移量
-      kind: "isMovie", // 当前点击的导航
+
       sliderList: [], // 展示数据的数组
+      navBar: {
+        title: "猫眼电影",
+        defaultSelect: "isMovie", // 当前点击的导航
+        itemList: [
+          {
+            title: "正在热映",
+            tab: "isMovie",
+          },
+          {
+            title: "即将上映",
+            tab: "theMovie",
+          },
+        ],
+      },
       sliderWidth: 0, // 内容父级盒子的宽度
       ajaxData: [
         {
@@ -275,20 +279,10 @@ export default {
      *
      * 使用事件冒泡编写处理
      */
-    hanleHover(e) {
-      // 获取事件源对象
-      let dom = e.target;
-      // 获取事件源对象的标签名并转换成小写
-      let tagname = dom.tagName.toLowerCase();
-      // 判断是否为 dd 标签
-      if (tagname != "dd") {
-        return false;
-      }
-      // 获取标签身上的属性值
-      this.kind = dom.getAttribute("data-type");
-
+    hanleHover(name) {
+      console.log(name);
       //对当前点击的导航变量赋值
-      if (this.kind == "isMovie") {
+      if (name == "isMovie") {
         // 对数据进行赋值
         this.sliderList = this.ajaxData[0].data[0];
       } else {

@@ -10,22 +10,27 @@
     </el-row>
     <el-row>
         <el-col :span="24">
-              <my-container></my-container>
+              <my-moviecontainer></my-moviecontainer>
+        </el-col>
+        <el-col :span="24">
+            <my-housecontainer></my-housecontainer>
         </el-col>
     </el-row>
   </div>
 </template>
 
 <script>
-import MyMenu from "@/components/main/menu.vue";
-import MyLife from "@/components/main/life.vue";
-import MyContainer from "@/components/main/container.vue";
+import MyMenu from "@/components/main/carousel/menu.vue";
+import MyLife from "@/components/main/carousel/life.vue";
+import MyMoviecontainer from "@/components/main/movie/container.vue";
+import MyHousecontainer from "@/components/main/house/container.vue"
 
 export default {
   components: {
     MyMenu,
     MyLife,
-    MyContainer
+    MyMoviecontainer,
+    MyHousecontainer
   },
 };
 </script>

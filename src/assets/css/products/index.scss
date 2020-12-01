@@ -42,7 +42,7 @@
           }
         }
 
-        >span {
+        >span,.el-rate {
           font-size: 12px;
           margin-right: 10px;
         }
@@ -62,7 +62,7 @@
             &:hover {
               background-color: #F8F8F8;
               .deal-title {
-                color: #13D1BE;
+                color: #FFC300;
               }
             }
             .deal-title {
@@ -176,7 +176,7 @@
           cursor: pointer;
 
           &.s-nav-active {
-            color: #31BCAD;
+            font-weight: 600;
           }
         }
 
@@ -230,8 +230,8 @@
 
         &:nth-child(2) {
           border-radius: 100px;
-          background: #13D1BE;
-          color: #FFF;
+          background: #FFC300;
+          color: #000;
           height: 22px;
           line-height: 22px;
           width: 40px;
@@ -254,14 +254,16 @@
       .tab {
         position: relative;
 
-        dt {
+        h3 {
           font-size: 14px;
           line-height: 24px;
           &.select-title {
             color: #ccc;
           }
         }
-
+        dt{
+            line-height: 24px;
+        }
         dd {
           &:before {
             content: ' ';

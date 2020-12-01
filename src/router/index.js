@@ -12,9 +12,15 @@ export default new Router({
             component: () => import(/* webpackChunkName : index */'@/layout/default'),
             redirect: "index",
             children: [
-                {
+                {   
                     path: '/index', name: 'index', component: () => import(/* webpackChunkName : index */ '@/page/index')
-        }
+                },
+                {
+                    path : '/changeCity', name : 'changeCity', component : () => import('@/page/changCity.vue'),
+                },
+                {
+                    path :'/product/:name' , name : 'product', component : () => import('@/page/product'),
+                }
             ]
         }
     ]

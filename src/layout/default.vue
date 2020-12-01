@@ -1,6 +1,6 @@
 <template>
 <!-- 默认的模板组件 -->
-  <div class="layout-default">
+  <div class="layout-default" style="min-width : 1190px">
     <el-container>
       <el-header style="height : ''">
           <my-header></my-header>

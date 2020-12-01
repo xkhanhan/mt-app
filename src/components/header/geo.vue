@@ -2,7 +2,7 @@
 <!-- 头部左半部分城市和个人信息 -->
     <div class="m-geo">
         <div class='position'>
-               <i class="el-icon-location" /><span>北京</span>
+               <i class="el-icon-location" /><span>{{ $store.state.position }}</span>
                <router-link class="changeCity" :to="{name : 'changeCity'}">切换城市</router-link>
                <span>
                    [
@@ -19,6 +19,3 @@
     </div>
 </template>
 
-<script>
-export default {}
-</script>
