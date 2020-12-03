@@ -68,6 +68,10 @@
 
             dd {
               display: inline-block;
+              width: 65px;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
               color: #666;
               margin-right: 10px;
               margin-bottom: 3px;

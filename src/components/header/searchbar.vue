@@ -50,16 +50,30 @@
 </template>
 
 <script>
+import api from "@/https/api";
+
 export default {
   data() {
     return {
       seachContext: "",
       isFocus: false,
-      hotPalceList: ["火锅", "火锅自助", "火锅重庆"],
-      searchList: ["火锅", "火锅自助", "火锅重庆"],
-      suggestList: ["火锅", "火锅自助", "火锅重庆"],
+      hotPalceList: [],
+      searchList: [],
+      suggestList: [],
       time: null,
     };
+  },
+  created() {
+    api.search().then((response) => {
+        console.log(response);
+      this.searchList = response.list;
+    });
+
+    api.searchHotWords().then((response) => {
+      console.log(response);
+      this.hotPalceList = response;
+      this.suggestList = response
+    });
   },
   computed: {
     // 用于展示搜索框下的搜索信息
