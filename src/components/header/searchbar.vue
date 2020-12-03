@@ -50,7 +50,6 @@
 </template>
 
 <script>
-import api from "@/https/api";
 
 export default {
   data() {
